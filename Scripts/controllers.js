@@ -1,65 +1,63 @@
 'use strict';
 
 /* Controllers */
-var isReferralSubmitted = '';
-
-angular.module('myApp.controllers', ['ngCookies']).
+angular.module("myApp.controllers", []).
     //Client Profile
-    controller('ClientProfileDetailsController', [function() {
-
+    controller('ClientProfileDetailsController', ['$scope','ReferralStatus', function($scope, ReferralStatus) {
+        $scope.isReferralSubmitted = ReferralStatus.getReferralStatus();
     }]).
 
     //B2i Module//
 
     //History
-    controller('B2iHistoryListController', [function() {
-
+    controller('B2iHistoryListController', ['$scope','ReferralStatus', function($scope, ReferralStatus) {
+        $scope.isReferralSubmitted = ReferralStatus.getReferralStatus();
     }]).
     //Initial Referral
-    controller('InitialReferralListController', [function() {
-
+    controller('InitialReferralListController', ['$scope','ReferralStatus', function($scope, ReferralStatus) {
+        $scope.isReferralSubmitted = ReferralStatus.getReferralStatus();
     }]).
-    controller('InitialReferralCreateController', [function() {
-
-    }]).
-    controller('InitialReferralDetailsController', ['$scope', function($scope) {
+    controller('InitialReferralCreateController', ['$scope','ReferralStatus', function($scope, ReferralStatus) {
+        $scope.isReferralSubmitted = ReferralStatus.getReferralStatus();
         $scope.saveButton = function() {
-            window.location.assign("#/initialreferral/view")
+            ReferralStatus.setReferralStatus(true)
+            window.location.assign("#/initialreferral/details")
         };
-        $scope.submitReferral = function($scope){
-            var isReferralSubmitted = true;
-            $scope.status = isReferralSubmitted;
+    }]).
+    controller('InitialReferralDetailsController', ['$scope','ReferralStatus', function($scope, ReferralStatus) {
+        $scope.isReferralSubmitted = ReferralStatus.getReferralStatus();
+        $scope.submitReferral = function(){
             window.location.assign("#/questionnaire/list")
         };
     }]).
-    controller('InitialReferralEditController', [function() {
-
+    controller('InitialReferralEditController', ['$scope','ReferralStatus', function($scope, ReferralStatus) {
+        $scope.isReferralSubmitted = ReferralStatus.getReferralStatus();
     }]).
-    controller('InitialReferralEditRepresentativesController', [function() {
-
+    controller('InitialReferralEditRepresentativesController', ['$scope','ReferralStatus', function($scope, ReferralStatus) {
+        $scope.isReferralSubmitted = ReferralStatus.getReferralStatus();
     }]).
-    controller('InitialReferralEditFacilityController', [function() {
-
+    controller('InitialReferralEditFacilityController', ['$scope','ReferralStatus', function($scope, ReferralStatus) {
+        $scope.isReferralSubmitted = ReferralStatus.getReferralStatus();
     }]).
-    controller('InitialReferralEditReferralController', [function() {
-
+    controller('InitialReferralEditReferralController', ['$scope','ReferralStatus', function($scope, ReferralStatus) {
+        $scope.isReferralSubmitted = ReferralStatus.getReferralStatus();
     }]).
-    controller('InitialReferralEditLivingArrangementController', [function() {
-
+    controller('InitialReferralEditLivingArrangementController', ['$scope','ReferralStatus', function($scope, ReferralStatus) {
+        $scope.isReferralSubmitted = ReferralStatus.getReferralStatus();
     }]).
-    controller('InitialReferralEditWaiverController', [function() {
-
+    controller('InitialReferralEditWaiverController', ['$scope','ReferralStatus', function($scope, ReferralStatus) {
+        $scope.isReferralSubmitted = ReferralStatus.getReferralStatus();
     }]).
     //B2i Questionnaire
-    controller('QuestionnaireListController', ['$scope', function($scope) {
-
+    controller('QuestionnaireListController', ['$scope', 'ReferralStatus', function($scope, ReferralStatus) {
+        $scope.isReferralSubmitted = ReferralStatus.getReferralStatus();
     }]).
-    controller('QuestionnaireCreateController', ['$scope', function($scope) {
-
+    controller('QuestionnaireCreateController', ['$scope','ReferralStatus', function($scope, ReferralStatus) {
+        $scope.isReferralSubmitted = ReferralStatus.getReferralStatus();
     }]).
-    controller('QuestionnaireDetailsController', ['$scope', function($scope) {
-
+    controller('QuestionnaireDetailsController', ['$scope','ReferralStatus', function($scope, ReferralStatus) {
+        $scope.isReferralSubmitted = ReferralStatus.getReferralStatus();
     }]).
-    controller('QuestionnaireEditController', ['$scope', function($scope) {
-
+    controller('QuestionnaireEditController', ['$scope','ReferralStatus', function($scope, ReferralStatus) {
+        $scope.isReferralSubmitted = ReferralStatus.getReferralStatus();
     }]);

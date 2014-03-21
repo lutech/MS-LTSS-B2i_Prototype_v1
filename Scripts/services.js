@@ -1,6 +1,14 @@
 angular.module('myApp.services', [
-    'ngResources'
+    'ngResource'
 ]).
-factory('referralService', function($resource){
-        var isReferralSubmitted =[];
+factory('ReferralStatus', function($resource){
+        var referralStatus ={isSubmitted: false};
+        return{
+            getReferralStatus : function(){
+                return referralStatus.isSubmitted;
+            },
+            setReferralStatus : function(value){
+                referralStatus.isSubmitted = value;
+            }
+        }
     });
