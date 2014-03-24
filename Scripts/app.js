@@ -85,6 +85,9 @@ angular.module('myApp', [
         $routeProvider.when('/questionnaire/details',
             {
                 templateUrl: 'areas/b2i/questionnaire/details.html',
+                link: function(scope) {
+                        scope.$apply();
+                    },
                 controller: 'QuestionnaireDetailsController'
             });
         $routeProvider.when('/questionnaire/edit',
@@ -93,11 +96,49 @@ angular.module('myApp', [
                 controller: 'QuestionnaireEditController'
             });
 
+        // Provider Assignment
+        $routeProvider.when('/providerassignment/list',
+            {
+                templateUrl: 'areas/b2i/providerassignment/list.html',
+                controller: 'providerAssignmentListController'
+            });
+
+        //Freedom of Choice
+        $routeProvider.when('/freedomofchoice/list',
+            {
+                templateUrl: 'areas/b2i/freedomofchoice/list.html',
+                controller: 'freedomOfChoiceListController'
+            });
+
+        //Consent to Participate
+        $routeProvider.when('/consenttoparticipate/list',
+            {
+                templateUrl: 'areas/b2i/consenttoparticipate/list.html',
+                controller: 'consentToParticipateListController'
+            });
+
+        //Quality of Life
+        $routeProvider.when('/qualityoflife/list',
+            {
+                templateUrl: 'areas/b2i/qualityoflife/list.html',
+                controller: 'qualityOfLifeListController'
+            });
+
+        //Application Assistance
+        $routeProvider.when('/applicationassistance/list',
+            {
+                templateUrl: 'areas/b2i/applicationassistance/list.html',
+                controller: 'applicationAssistanceListController'
+            });
         //Default View
         $routeProvider.otherwise({redirectTo: '/client/profile/details'});
     }]).
-    run(function ($rootScope) {
+    run(function ($rootScope, ReferralStatus) {
+        $rootScope.resetAll = function() {
+            ReferralStatus.setReferralStatus(false)
+            window.location.assign("#/client/profile/details")
+        };
     $rootScope.$on('$viewContentLoaded', function () {
-        console.log('Hello');
+        //on page load, do something.
     });
 });;
