@@ -13,7 +13,7 @@ angular.module("myApp.controllers", []).
         };
         $scope.submitReferral = function(){
             ReferralStatus.setReferralStatus('submitted')
-            window.location.assign("#/b2i/history/list")
+            $route.reload();
         };
 
         //Questionnaire

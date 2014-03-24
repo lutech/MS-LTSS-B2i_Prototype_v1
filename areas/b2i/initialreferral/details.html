@@ -206,14 +206,14 @@
     <div role="presentation">
 
         <button class="leftNav-dropDownButton hide-for-print"><span class="icon-reorder "></span></button>
-        <h3>B2i - Initial Referral - Overview</h3>
+        <h3>B2i - Initial Referral - Overview <span ng-hide="referralStatus == 'inProgress'">Status: Submitted</span> <span ng-hide="referralStatus == 'submitted'">Status: In Progress</span></h3>
 
         <div class="workspace-header-bar">
             <div class="float-left">
-                <a href="#/initialreferral/list" role="button">Back to List</a>
+                <a href="#/b2i/history/list" role="button">Back to History</a>
             </div>
             <div class="float-right">
-                <button type="button" ng-click="submitReferral()">Submit</button>
+                <button type="button" ng-click="submitReferral()" ng-hide="referralStatus == 'submitted'">Submit</button>
             </div>
         </div>
 
@@ -235,7 +235,7 @@
     <h4>General Information</h4>
 
     <div class="form-action TaskDetailLink">
-        <a class="ProfileEditLink" href="#/initialreferral/edit" title="Edit General Information">Edit</a>
+        <a ng-hide="referralStatus == 'submitted'" class="ProfileEditLink" href="#/initialreferral/edit" title="Edit General Information">Edit</a>
     </div>
 </div>
 <div class="body" style="height: 0px; overflow: hidden; display: block;">
@@ -493,7 +493,7 @@
         <h4>Representatives</h4>
 
         <div class="form-action TaskDetailLink">
-            <a class="ProfileEditLink"
+            <a ng-hide="referralStatus == 'submitted'" class="ProfileEditLink"
                href="#/initialreferral/editrepresentatives"
                title="Manage Representatives">Manage</a>
         </div>
@@ -596,7 +596,7 @@
         <h4>Facility Information</h4>
 
         <div class="form-action TaskDetailLink">
-            <a class="ProfileEditLink"
+            <a ng-hide="referralStatus == 'submitted'" class="ProfileEditLink"
                href="#/initialreferral/editfacility" title="Edit Facility Information">Edit</a>
         </div>
     </div>
@@ -621,7 +621,7 @@
         <h4>Referral Information</h4>
 
         <div class="form-action TaskDetailLink">
-            <a class="ProfileEditLink"
+            <a ng-hide="referralStatus == 'submitted'" class="ProfileEditLink"
                href="#/initialreferral/editreferral"
                title="Edit Referral Information">Edit</a>
         </div>
@@ -663,7 +663,7 @@
         <h4>Preferred Living Arrangements</h4>
 
         <div class="form-action TaskDetailLink">
-            <a class="ProfileEditLink"
+            <a ng-hide="referralStatus == 'submitted'" class="ProfileEditLink"
                href="#/initialreferral/editlivingarrangement" title="Edit Preferred Living Arrangements">Edit</a>
         </div>
     </div>
@@ -716,7 +716,7 @@
         <h4>Waiver Information</h4>
 
         <div class="form-action TaskDetailLink">
-            <a class="ProfileEditLink"
+            <a ng-hide="referralStatus == 'submitted'" class="ProfileEditLink"
                href="#/initialreferral/editwaiver"
                title="Edit Waiver Information">Edit</a>
         </div>
