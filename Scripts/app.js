@@ -14,73 +14,73 @@ angular.module('myApp', [
         $routeProvider.when('/client/profile/details',
             {
                 templateUrl: 'areas/client/profile/details.html',
-                controller: 'ClientProfileDetailsController'
+                controller: 'MainController'
             });
 
         //History
         $routeProvider.when('/b2i/history/list',
             {
                 templateUrl: 'areas/b2i/history/list.html',
-                controller: 'B2iHistoryListController'
+                controller: 'MainController'
             });
 
         //Initial Referral
         $routeProvider.when('/initialreferral/list',
             {
                 templateUrl: 'areas/b2i/initialreferral/list.html',
-                controller: 'initialReferralListController'
+                controller: 'MainController'
             });
         $routeProvider.when('/initialreferral/create',
             {
                 templateUrl: 'areas/b2i/initialreferral/create.html',
-                controller: 'InitialReferralCreateController'
+                controller: 'MainController'
             });
         $routeProvider.when('/initialreferral/details',
             {
                 templateUrl: 'areas/b2i/initialreferral/details.html',
-                controller: 'InitialReferralDetailsController'
+                controller: 'MainController'
             });
         $routeProvider.when('/initialreferral/edit',
             {
                 templateUrl: 'areas/b2i/initialreferral/edit.html',
-                controller: 'InitialReferralEditController'
+                controller: 'MainController'
             });
         $routeProvider.when('/initialreferral/editrepresentatives',
             {
                 templateUrl: 'areas/b2i/initialreferral/editrepresentatives.html',
-                controller: 'InitialReferralEditRepresentativesController'
+                controller: 'MainController'
             });
         $routeProvider.when('/initialreferral/editfacility',
             {
                 templateUrl: 'areas/b2i/initialreferral/editfacility.html',
-                controller: 'InitialReferralEditFacilityController'
+                controller: 'MainController'
             });
         $routeProvider.when('/initialreferral/editreferral',
             {
                 templateUrl: 'areas/b2i/initialreferral/editreferral.html',
-                controller: 'InitialReferralEditReferralController'
+                controller: 'MainController'
             });
         $routeProvider.when('/initialreferral/editlivingarrangement',
             {
                 templateUrl: 'areas/b2i/initialreferral/editlivingarrangement.html',
-                controller: 'InitialReferralEditLivingArrangementController'
+                controller: 'MainController'
             });
         $routeProvider.when('/initialreferral/editwaiver',
             {
                 templateUrl: 'areas/b2i/initialreferral/editwaiver.html',
-                controller: 'InitialReferralEditWaiverController'
+                controller: 'MainController'
             });
 
         //B2i Questionnaire
         $routeProvider.when('/questionnaire/list',
             {
                 templateUrl: 'areas/b2i/questionnaire/list.html',
-                controller: 'QuestionnaireListController'
+                controller: 'MainController'
             });
         $routeProvider.when('/questionnaire/create',
             {
                 templateUrl: 'areas/b2i/questionnaire/create.html',
-                controller: 'QuestionnaireCreateController'
+                controller: 'MainController'
             });
         $routeProvider.when('/questionnaire/details',
             {
@@ -88,47 +88,54 @@ angular.module('myApp', [
                 link: function(scope) {
                         scope.$apply();
                     },
-                controller: 'QuestionnaireDetailsController'
+                controller: 'MainController'
             });
         $routeProvider.when('/questionnaire/edit',
             {
                 templateUrl: 'areas/b2i/questionnaire/edit.html',
-                controller: 'QuestionnaireEditController'
+                controller: 'MainController'
             });
 
         // Provider Assignment
         $routeProvider.when('/providerassignment/list',
             {
                 templateUrl: 'areas/b2i/providerassignment/list.html',
-                controller: 'providerAssignmentListController'
+                controller: 'MainController'
             });
 
         //Freedom of Choice
         $routeProvider.when('/freedomofchoice/list',
             {
                 templateUrl: 'areas/b2i/freedomofchoice/list.html',
-                controller: 'freedomOfChoiceListController'
+                controller: 'MainController'
             });
 
         //Consent to Participate
         $routeProvider.when('/consenttoparticipate/list',
             {
                 templateUrl: 'areas/b2i/consenttoparticipate/list.html',
-                controller: 'consentToParticipateListController'
+                controller: 'MainController'
             });
 
         //Quality of Life
         $routeProvider.when('/qualityoflife/list',
             {
                 templateUrl: 'areas/b2i/qualityoflife/list.html',
-                controller: 'qualityOfLifeListController'
+                controller: 'MainController'
             });
 
         //Application Assistance
         $routeProvider.when('/applicationassistance/list',
             {
                 templateUrl: 'areas/b2i/applicationassistance/list.html',
-                controller: 'applicationAssistanceListController'
+                controller: 'MainController'
+            });
+
+        //Discahrge Form
+        $routeProvider.when('/dischargeform/list',
+            {
+                templateUrl: 'areas/b2i/dischargeform/list.html',
+                controller: 'MainController'
             });
         //Default View
         $routeProvider.otherwise({redirectTo: '/client/profile/details'});

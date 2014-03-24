@@ -480,7 +480,7 @@
                         </h4>
 
                         <div class="task-action TaskDetailLink">
-                            <a href="#/questionnaire/create" title="Create Assessment &amp; POC Request">Add New Initial Referral</a>
+                            <a href="#/initialreferral/create" title="Create Assessment &amp; POC Request">Add</a>
                         </div>
 
                         <div class="task-action TaskDetailLink">
@@ -524,8 +524,14 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="odd">
+                                <tr class="odd" ng-hide="referralStatus">
                                     <td valign="top" colspan="7" class="dataTables_empty">No data available in table</td>
+                                </tr>
+                                <tr class="odd" ng-show="referralStatus == 'inProgress' || referralStatus == 'submitted' ">
+                                    <td valign="top" >01/01/2014</td>
+                                    <td valign="top" >Holly Green</td>
+                                    <td valign="top" ><span ng-show="referralStatus == 'inProgress'">In Progress</span><span ng-show="referralStatus == 'submitted' ">Submitted</span></td>
+                                    <td valign="top" ><a href="#">Details</a></td>
                                 </tr>
                                 </tbody>
                             </table>
